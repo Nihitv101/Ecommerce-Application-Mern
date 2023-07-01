@@ -50,7 +50,6 @@ app.get('/', (req, res)=>{
 
 
 // deployment config
-const path = require("path");
 __dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
