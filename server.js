@@ -20,10 +20,6 @@ dotenv.config();
 connectDB();
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-
 
 const app = express();
 
@@ -43,10 +39,6 @@ import {fileURLToPath} from 'url'
 
 
 
-app.use('*', function(req, res){
-    res.sendFile(path.join(__dirname, "./client/build/index.html"))
-})
-
 
 
 app.get('/', (req, res)=>{
@@ -54,6 +46,20 @@ app.get('/', (req, res)=>{
         message:"okay"
     })
 })
+
+
+
+// deployment config
+const path = require("path");
+__dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+}
+
 
 
 
