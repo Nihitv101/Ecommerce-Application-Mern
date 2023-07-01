@@ -39,16 +39,6 @@ import {fileURLToPath} from 'url'
 
 
 
-
-
-app.get('/', (req, res)=>{
-    res.send({
-        message:"okay"
-    })
-})
-
-
-
 // deployment config
 const __dirname = path.resolve();
 
