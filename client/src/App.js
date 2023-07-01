@@ -29,7 +29,7 @@ import CategoryProduct from './Pages/CategoryProduct'
 import Cart from './Pages/Cart'
 import AdminOrders from './Pages/Admin/AdminOrders'
 
-axios.defaults.baseURL='http://localhost:8000'
+// axios.defaults.baseURL='http://localhost:8000'
 
 
 const App = () => {
