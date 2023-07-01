@@ -7,7 +7,6 @@ import cors from 'cors';
 import path from 'path';
 
 
-
 // importing routes:
 import authRoutes from './routes/auth.route.js';
 import categoryRoutes from './routes/category.route.js';
